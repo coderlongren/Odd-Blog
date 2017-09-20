@@ -1,0 +1,13 @@
+.myhead {
+    background-color: #f98752;
+    
+    height: 180px;
+
+}
+.myhead img {
+    height: 120px;
+    width: 130px;
+}
+.row {
+    margin-top: 24px
+}
