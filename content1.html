@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,hight=device-hight,minimum-   scale=1.0,maximum-scale=1.0,ser-scalable=none"/>
+    <title>java虚拟机</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index1.css">
+    <style type="text/css">
+        .color_blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid myhead">
+        <div class="row">
+            <div class="col-md-2" style="margin-left:250px;">
+                <img class="img-circle img-reponsesive pull-right" src="imges/3.jpg">
+            </div>
+            <div class="col-md-7" style="">
+                <h1>coderlong的博客</h1>
+                <p>我是不是抄袭了鹏哥的博客。。。。。。</p>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+                <h2>java虚拟机背后的东西</h2>
+                <P>语法糖（Syntactic Sugar），也叫糖衣语法，是英国计算机科学家彼得·约翰·兰达(Peter J. Landin)发明的一个术语。指的是，在计算机语言中添加某种语法，这些语法糖虽然不会对语言的功能产生任何影响，却能使程序员更方便的使用语言开发程序，同时增强程序代码的可读性，避免出错的机会。但是如果只是大量添加和使用语法糖，却不去了解他，容易产生过度依赖，从而无法看清语法糖的糖衣背后，程序代码的真实面目。
+
+总而言之，语法糖可以看做是编译器实现的一些“小把戏”，这些“小把戏”可能会使得效率“大提升”，但我们也应该去了解这些“小把戏”背后的真是世界，这样才能更好地利用它们，而不是被它们迷惑。
+
+下面我们就 泛型，自动拆箱/装箱、遍历循环和条件编译做简单的介绍和分析。了解他们背后的真相。</P>
+
+                <h3>1、泛型与类型擦除</h3>
+                <p>泛型是 JDK 1.5 的一项新增类型，它的本质是参数化类型（Parametersized Type）的应用，也就是说所操作的数据类型被指定为一个参数。这种参数可以用在类、接口和方法的创建中，分别成为泛型类、泛型接口和泛型方法。
+
+       泛型思想早在 C++ 语言的模板（Template） 就开始生根发芽。在 Java 语言还处于没有出现泛型的版本的时候，只能通过 Object 类是所有类型的父类和类型强制转换两个特点的配合来实现类型泛化。 例如，在 HashMap 的存取中，get() 方法返回的就是一个 Object 对象，由于 Java 语言所有的类型都继承于 java.lang.Object ， 所以 Object 转型成任何对象都是有可能的。但是也因为有无限的可能性，就只有程序员和运行期的虚拟机知道这个Object 到底是什么类型的对象。在编译期间，编译器无法检查这个 Object 的强制转型是否成功，如果仅仅依赖于程序员去保障这项操作的正确性，许多 ClassCastException 的风险就会转嫁到程序运行期中。
+
+       但是，泛型技术在 C# 和 Java 之中的使用方式看似相同，在实现上却有着根本性的分歧，C# 的泛型无论是在源码中、编译后的 IL 中（Intermediate Language ， 中间语言买这时候泛型符是一个占位符），或是运行期的 CLR 中，都是切实存在的， List<int> 和 List<String> 就是两个不同的类型，它们在运行期间，有自己的虚方法表和类型数据，这种实现称为类型膨胀，基于这种方法实现的泛型称为真实泛型。
+
+       Java 中的泛型则不一样，它只在程序源码中存在，在编译后的字节码文件中，就已经替换为原来的原生类型（Raw Type ， 也成为裸类型）了，并且在相应的地方插入了强制类型转换代码，因此，对于运行期的 Java 语言来说，ArrayList<Integer> 和 ArrayList<String> 就是同一个类，所以泛型技术实际上是 Java 语言的一颗语法糖，Java 语言中的泛型实现方法称为类型擦除，基于这种方法实现的泛型称为伪泛型。</p>
+            </div>
+        </div>
+    </div>
+
+
+
+  
+
+  
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

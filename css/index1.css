@@ -8,6 +8,21 @@
     height: 120px;
     width: 130px;
 }
+.tail {
+    background-color: #f98752;
+    
+    height: 80px;
+}
 .row {
     margin-top: 24px
+}
+.long-content {
+    margin: 50px 0;
+}
+.long-content-head {
+    margin: 10px 2px;
+    background-color: ;
+}
+.pagination {
+    margin-left: 1100px;
 }
